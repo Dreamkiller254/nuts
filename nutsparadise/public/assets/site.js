@@ -3,8 +3,10 @@
     let hideTimer = null;
 
     const transition = () => document.querySelector('#np-transition');
+    const navigationStatus = () => document.querySelector('#np-navigation-status');
     const mobileMenu = () => document.querySelector('#site-mobile-menu');
     const menuToggle = () => document.querySelector('.site-menu-toggle');
+    const main = () => document.querySelector('#main');
 
     const pageLabel = (url) => {
         const path = url?.pathname || window.location.pathname;
@@ -15,13 +17,14 @@
             '/products/macadamias': 'Loading macadamias',
             '/products/cashews': 'Loading cashews',
             '/processing': 'Loading processing',
-            '/quality-certification': 'Loading quality & certification',
+            '/quality-certification': 'Loading quality and certification',
             '/traceability': 'Loading traceability',
             '/buyers': 'Loading buyer information',
             '/export-markets': 'Loading export markets',
             '/contact': 'Loading contact',
             '/privacy-policy': 'Loading privacy policy',
             '/terms-of-use': 'Loading terms of use',
+            '/photography': 'Loading photography credits',
         };
 
         return labels[path] || 'Loading page';
@@ -33,10 +36,14 @@
 
         clearTimeout(hideTimer);
         navigationStartedAt = performance.now();
+        const labelText = pageLabel(url);
         const label = layer.querySelector('.np-transition-label');
-        if (label) label.textContent = pageLabel(url);
+        if (label) label.textContent = labelText;
+
+        const status = navigationStatus();
+        if (status) status.textContent = labelText;
+        main()?.setAttribute('aria-busy', 'true');
         layer.classList.add('is-active');
-        layer.setAttribute('aria-hidden', 'false');
     };
 
     const hideTransition = () => {
@@ -48,7 +55,9 @@
 
         hideTimer = window.setTimeout(() => {
             layer.classList.remove('is-active');
-            layer.setAttribute('aria-hidden', 'true');
+            main()?.removeAttribute('aria-busy');
+            const status = navigationStatus();
+            if (status) status.textContent = 'Page loaded';
             navigationStartedAt = 0;
         }, delay);
     };
@@ -128,6 +137,7 @@
                 requiredFields.forEach(field => {
                     const invalid = !field.checkValidity();
                     field.classList.toggle('is-invalid', invalid);
+                    field.setAttribute('aria-invalid', invalid ? 'true' : 'false');
                     if (invalid && !firstInvalid) firstInvalid = field;
                 });
 
@@ -141,22 +151,26 @@
             });
 
             form.querySelectorAll('input, select, textarea').forEach(field => {
-                field.addEventListener('input', () => field.classList.remove('is-invalid'));
-                field.addEventListener('change', () => field.classList.remove('is-invalid'));
+                const clearInvalid = () => {
+                    field.classList.remove('is-invalid');
+                    field.removeAttribute('aria-invalid');
+                };
+                field.addEventListener('input', clearInvalid);
+                field.addEventListener('change', clearInvalid);
             });
         });
     };
 
     const afterNavigation = () => {
+        const wasNavigating = navigationStartedAt > 0;
         initialiseMenu();
         syncActiveNavigation();
         initialiseReveal();
         initialisePreviewForms();
         hideTransition();
 
-        if (navigationStartedAt) {
-            const main = document.querySelector('#main');
-            window.requestAnimationFrame(() => main?.focus({ preventScroll: true }));
+        if (wasNavigating) {
+            window.requestAnimationFrame(() => main()?.focus({ preventScroll: true }));
         }
     };
 
@@ -165,7 +179,7 @@
         showTransition(event.detail?.url);
     });
 
-    document.addEventListener('livewire:navigating', () => closeMobileMenu());
+    document.addEventListener('livewire:navigating', closeMobileMenu);
     document.addEventListener('livewire:navigated', afterNavigation);
     document.addEventListener('DOMContentLoaded', afterNavigation, { once: true });
 })();
