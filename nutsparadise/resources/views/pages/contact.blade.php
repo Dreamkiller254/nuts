@@ -56,10 +56,10 @@
                         <path d="M16 28s8-7.38 8-15a8 8 0 1 0-16 0c0 7.62 8 15 8 15Z" fill="none" stroke="currentColor" stroke-width="1.8"/>
                         <circle cx="16" cy="13" r="3" fill="none" stroke="currentColor" stroke-width="1.8"/>
                     </svg>
-                    <span class="np-label">External media</span>
-                    <h3>View our Johannesburg office map</h3>
-                    <p>Google Maps is optional and will load only if you allow external media. You can change this choice later from Cookie settings.</p>
-                    <button type="button" class="np-button lime" data-cookie-allow-media>Allow &amp; Load Map <span aria-hidden="true">↗</span></button>
+                    <span class="np-label">Map</span>
+                    <h3>Johannesburg office</h3>
+                    <p>Google Maps loads only with optional media consent.</p>
+                    <button type="button" class="np-button lime" data-cookie-allow-media>Load Map <span aria-hidden="true">↗</span></button>
                 </div>
                 <iframe
                     title="Nuts Paradise Johannesburg office at 222 Smit Street"
