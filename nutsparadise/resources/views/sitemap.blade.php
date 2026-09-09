@@ -1,8 +1,11 @@
 @php echo '<?xml version="1.0" encoding="UTF-8"?>'; @endphp
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
-@foreach($urls as $url)
+@foreach($entries as $entry)
     <url>
-        <loc>{{ $url }}</loc>
+        <loc>{{ $entry['loc'] }}</loc>
+        @if(!empty($entry['lastmod']))
+            <lastmod>{{ $entry['lastmod'] }}</lastmod>
+        @endif
     </url>
 @endforeach
 </urlset>

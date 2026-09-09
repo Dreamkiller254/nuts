@@ -18,25 +18,24 @@ Route::view('/terms-of-use', 'pages.terms-of-use')->name('terms');
 Route::redirect('/quality', '/quality-certification', 301);
 
 Route::get('/sitemap.xml', function () {
-    $routes = [
-        'home',
-        'about',
-        'products.index',
-        'products.macadamias',
-        'products.cashews',
-        'processing',
-        'quality',
-        'traceability',
-        'buyers',
-        'export-markets',
-        'contact',
-        'privacy',
-        'terms',
-    ];
+    $baseUrl = rtrim((string) config('app.url'), '/');
+    $entries = collect(config('seo.pages'))
+        ->filter(fn (array $page): bool => (bool) ($page['indexable'] ?? false))
+        ->map(function (array $page, string $routeName) use ($baseUrl): array {
+            $path = route($routeName, [], false);
+
+            return [
+                'loc' => $path === '/' ? $baseUrl.'/' : $baseUrl.'/'.ltrim($path, '/'),
+                'lastmod' => $page['lastmod'] ?? null,
+            ];
+        })
+        ->values()
+        ->all();
 
     return response()
-        ->view('sitemap', ['urls' => array_map(fn (string $route) => route($route), $routes)])
-        ->header('Content-Type', 'application/xml; charset=UTF-8');
+        ->view('sitemap', ['entries' => $entries])
+        ->header('Content-Type', 'application/xml; charset=UTF-8')
+        ->header('Cache-Control', 'public, max-age=3600');
 })->name('sitemap');
 
 Route::middleware(['auth', 'verified'])->group(function () {
