@@ -6,7 +6,7 @@
     <x-site.page-hero
         eyebrow="Macadamias"
         heading="South African-Processed Macadamias"
-        summary="Macadamia products prepared around approved buyer specifications, volume, destination and timing requirements."
+        summary="Macadamia products prepared around buyer specifications, volume, destination and timing requirements."
         cta-label="Request a Macadamia Quote"
         image="assets/photos/macadamia-dark.jpg"
         image-alt="Close-up study of macadamia nuts"
@@ -18,8 +18,8 @@
             <h2>Start with the<br><em>specification you need.</em></h2>
         </div>
         <div class="content-rich-copy">
-            <p class="large-copy">This page deliberately avoids guessing at grades, kernel styles, sizes, packaging or shelf-life information.</p>
-            <p class="np-body">Share the technical requirement you are buying against and Nuts Paradise can use that as the basis for the processing and commercial conversation. Approved product data can be added here later without changing the page structure.</p>
+            <p class="large-copy">Nuts Paradise processes macadamias in South Africa for professional food, ingredient, distribution and retail buyers.</p>
+            <p class="np-body">Product discussions are handled against the buyer's required specification, expected volume, destination market and timing so that processing and commercial requirements are aligned from the start.</p>
         </div>
     </section>
 
@@ -32,7 +32,7 @@
                 <span class="np-label">What to send us</span>
                 <h2>Four details make<br><em>a better first brief.</em></h2>
                 <div class="requirements-list compact">
-                    <div><span>01</span><p><strong>Specification</strong> The approved product requirement you need reviewed.</p></div>
+                    <div><span>01</span><p><strong>Specification</strong> The product requirement you need reviewed.</p></div>
                     <div><span>02</span><p><strong>Volume</strong> Estimated order or monthly requirement.</p></div>
                     <div><span>03</span><p><strong>Destination</strong> The market the product is intended for.</p></div>
                     <div><span>04</span><p><strong>Timing</strong> Your expected buying or delivery window.</p></div>
@@ -43,9 +43,9 @@
 
     <section class="np-section np-container reveal">
         <div class="specification-placeholder">
-            <span class="np-label">Available specifications</span>
-            <h3>Specification data will appear here when approved.</h3>
-            <p>No grades, sizes, product codes, packaging formats, shelf-life claims or nutrition data will be published from assumptions.</p>
+            <span class="np-label">Buyer-led supply</span>
+            <h3>Macadamia supply starts with your commercial and technical brief.</h3>
+            <p>Send the specification you are buying against together with expected volume, destination and timing. The Nuts Paradise team can then review the requirement and respond with the relevant product and commercial information.</p>
         </div>
     </section>
 
