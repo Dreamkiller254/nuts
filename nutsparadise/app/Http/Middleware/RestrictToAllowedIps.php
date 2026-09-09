@@ -11,15 +11,16 @@ class RestrictToAllowedIps
     /**
      * Handle an incoming request.
      *
-     * Blocks every IP except the allow-listed ones.
-     * Set the list in .env: ALLOWED_IPS=41.90.178.12,1.2.3.4
+     * IP restriction is opt-in for staging/private deployments. Configure it in
+     * config/access.php via RESTRICT_TO_ALLOWED_IPS and ALLOWED_IPS.
      */
     public function handle(Request $request, Closure $next): Response
     {
-        $allowedIps = array_filter(array_map(
-            'trim',
-            explode(',', (string) env('ALLOWED_IPS', '41.90.178.12'))
-        ));
+        if (! config('access.restrict_to_allowed_ips', false)) {
+            return $next($request);
+        }
+
+        $allowedIps = (array) config('access.allowed_ips', []);
 
         // Always allow localhost so server-side tasks (scheduler, queue,
         // health checks via loopback) don't get locked out.
