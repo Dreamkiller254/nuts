@@ -177,8 +177,8 @@
         });
     };
 
-    const initialisePreviewForms = () => {
-        document.querySelectorAll('[data-preview-form]').forEach(form => {
+    const initialiseEnquiryForms = () => {
+        document.querySelectorAll('[data-email-enquiry-form]').forEach(form => {
             if (form.dataset.initialised === 'true') return;
             form.dataset.initialised = 'true';
 
@@ -196,12 +196,31 @@
                 });
 
                 if (firstInvalid) {
-                    if (status) status.textContent = 'Please complete the required fields before reviewing the enquiry.';
+                    if (status) status.textContent = 'Please complete the required fields before preparing your enquiry.';
                     firstInvalid.focus();
                     return;
                 }
 
-                if (status) status.textContent = 'Your enquiry details look complete. Preview only — nothing has been sent or stored.';
+                const data = new FormData(form);
+                const value = name => String(data.get(name) || '').trim();
+                const subject = `Buyer enquiry — ${value('product_interest')} — ${value('company')}`;
+                const body = [
+                    'Nuts Paradise buyer enquiry',
+                    '',
+                    `Full name: ${value('full_name')}`,
+                    `Company: ${value('company')}`,
+                    `Business email: ${value('email')}`,
+                    `Country: ${value('country')}`,
+                    `Product interest: ${value('product_interest')}`,
+                    `Estimated volume: ${value('estimated_volume')}`,
+                    `Destination market: ${value('destination_market')}`,
+                    '',
+                    'Message:',
+                    value('message') || 'No additional message provided.',
+                ].join('\n');
+
+                if (status) status.textContent = 'Opening your email application. Review the enquiry and send it when ready.';
+                window.location.href = `mailto:info@nutsparadise.co.za?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`;
             });
 
             form.querySelectorAll('input, select, textarea').forEach(field => {
@@ -222,7 +241,7 @@
         initialiseProductsMenu();
         syncActiveNavigation();
         initialiseReveal();
-        initialisePreviewForms();
+        initialiseEnquiryForms();
         hideTransition();
 
         if (wasNavigating) {
