@@ -38,6 +38,7 @@
                     <a href="{{ route('traceability') }}" wire:navigate>Traceability</a>
                     <a href="{{ route('privacy') }}" wire:navigate>Privacy Policy</a>
                     <a href="{{ route('terms') }}" wire:navigate>Terms of Use</a>
+                    <button type="button" class="site-footer-cookie-button" data-cookie-settings>Cookie settings</button>
                 </div>
                 <div>
                     <span class="site-footer-heading">Products</span>
