@@ -4,6 +4,7 @@
 
     const transition = () => document.querySelector('#np-transition');
     const navigationStatus = () => document.querySelector('#np-navigation-status');
+    const headerShell = () => document.querySelector('.site-header-shell');
     const mobileMenu = () => document.querySelector('#site-mobile-menu');
     const menuToggle = () => document.querySelector('.site-menu-toggle');
     const main = () => document.querySelector('#main');
@@ -67,6 +68,56 @@
         if (menu?.open) menu.close();
     };
 
+    const closeProductsMenu = () => {
+        const wrapper = document.querySelector('.site-products-nav');
+        const trigger = wrapper?.querySelector('.site-nav-trigger');
+        if (!wrapper || !trigger) return;
+
+        wrapper.classList.remove('is-open');
+        trigger.setAttribute('aria-expanded', 'false');
+    };
+
+    const syncStickyHeader = () => {
+        const header = headerShell();
+        if (!header) return;
+
+        header.classList.toggle('is-scrolled', window.scrollY > 18);
+    };
+
+    const initialiseStickyHeader = () => {
+        const header = headerShell();
+        if (!header) return;
+
+        syncStickyHeader();
+        if (header.dataset.stickyInitialised === 'true') return;
+
+        header.dataset.stickyInitialised = 'true';
+        window.addEventListener('scroll', syncStickyHeader, { passive: true });
+    };
+
+    const initialiseProductsMenu = () => {
+        const wrapper = document.querySelector('.site-products-nav');
+        const trigger = wrapper?.querySelector('.site-nav-trigger');
+        if (!wrapper || !trigger || wrapper.dataset.initialised === 'true') return;
+
+        wrapper.dataset.initialised = 'true';
+        const setOpen = open => {
+            wrapper.classList.toggle('is-open', open);
+            trigger.setAttribute('aria-expanded', open ? 'true' : 'false');
+        };
+
+        trigger.addEventListener('click', () => setOpen(!wrapper.classList.contains('is-open')));
+        wrapper.querySelectorAll('a').forEach(link => link.addEventListener('click', () => setOpen(false)));
+        document.addEventListener('click', event => {
+            if (!wrapper.contains(event.target)) setOpen(false);
+        });
+        document.addEventListener('keydown', event => {
+            if (event.key !== 'Escape' || !wrapper.classList.contains('is-open')) return;
+            setOpen(false);
+            trigger.focus();
+        });
+    };
+
     const initialiseMenu = () => {
         const menu = mobileMenu();
         const toggle = menuToggle();
@@ -102,6 +153,10 @@
             if (isCurrent) link.setAttribute('aria-current', 'page');
             else link.removeAttribute('aria-current');
         });
+
+        const productsActive = currentPath === '/products' || currentPath.startsWith('/products/');
+        document.querySelector('.site-nav-trigger')?.classList.toggle('is-current', productsActive);
+        document.querySelector('.site-mobile-products')?.querySelector('summary')?.classList.toggle('is-current', productsActive);
     };
 
     const initialiseReveal = () => {
@@ -163,7 +218,9 @@
 
     const afterNavigation = () => {
         const wasNavigating = navigationStartedAt > 0;
+        initialiseStickyHeader();
         initialiseMenu();
+        initialiseProductsMenu();
         syncActiveNavigation();
         initialiseReveal();
         initialisePreviewForms();
@@ -176,6 +233,7 @@
 
     document.addEventListener('livewire:navigate', event => {
         closeMobileMenu();
+        closeProductsMenu();
         showTransition(event.detail?.url);
     });
 

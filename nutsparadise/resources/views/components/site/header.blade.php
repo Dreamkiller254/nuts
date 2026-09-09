@@ -6,7 +6,25 @@
 
         <nav class="site-desktop-nav" aria-label="Main navigation">
             <a href="{{ route('about') }}" wire:navigate wire:current="is-current">About</a>
-            <a href="{{ route('products.index') }}" wire:navigate wire:current="is-current">Products</a>
+            <div class="site-products-nav">
+                <button class="site-nav-trigger" type="button" aria-expanded="false" aria-controls="site-products-dropdown" aria-haspopup="true">
+                    Products <span class="site-nav-chevron" aria-hidden="true">⌄</span>
+                </button>
+                <div class="site-nav-dropdown" id="site-products-dropdown">
+                    <a href="{{ route('products.index') }}" wire:navigate>
+                        <strong>Macadamia &amp; Cashew Product Portfolio</strong>
+                        <small>Explore our South African nut products</small>
+                    </a>
+                    <a href="{{ route('products.macadamias') }}" wire:navigate>
+                        <strong>South African Macadamias</strong>
+                        <small>Macadamia products for professional buyers</small>
+                    </a>
+                    <a href="{{ route('products.cashews') }}" wire:navigate>
+                        <strong>Cashews</strong>
+                        <small>Cashew products for global food supply</small>
+                    </a>
+                </div>
+            </div>
             <a href="{{ route('processing') }}" wire:navigate wire:current="is-current">Processing</a>
             <a href="{{ route('quality') }}" wire:navigate wire:current="is-current">Quality</a>
             <a href="{{ route('traceability') }}" wire:navigate wire:current="is-current">Traceability</a>
@@ -27,7 +45,14 @@
             </div>
             <nav>
                 <a href="{{ route('about') }}" wire:navigate wire:current="is-current">About Us</a>
-                <a href="{{ route('products.index') }}" wire:navigate wire:current="is-current">Products</a>
+                <details class="site-mobile-products">
+                    <summary>Products <span aria-hidden="true">⌄</span></summary>
+                    <div class="site-mobile-products-links">
+                        <a href="{{ route('products.index') }}" wire:navigate>Macadamia &amp; Cashew Product Portfolio</a>
+                        <a href="{{ route('products.macadamias') }}" wire:navigate>South African Macadamias</a>
+                        <a href="{{ route('products.cashews') }}" wire:navigate>Cashews for Professional Supply</a>
+                    </div>
+                </details>
                 <a href="{{ route('processing') }}" wire:navigate wire:current="is-current">Processing</a>
                 <a href="{{ route('quality') }}" wire:navigate wire:current="is-current">Quality & Certification</a>
                 <a href="{{ route('traceability') }}" wire:navigate wire:current="is-current">Traceability</a>
