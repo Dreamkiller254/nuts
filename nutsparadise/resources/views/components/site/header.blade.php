@@ -8,7 +8,7 @@
             <a href="{{ route('about') }}" wire:navigate wire:current="is-current">About</a>
             <div class="site-products-nav">
                 <button class="site-nav-trigger" type="button" aria-expanded="false" aria-controls="site-products-dropdown" aria-haspopup="true">
-                    Products <span class="site-nav-chevron" aria-hidden="true">⌄</span>
+                    Products
                 </button>
                 <div class="site-nav-dropdown" id="site-products-dropdown">
                     <a href="{{ route('products.index') }}" wire:navigate>
@@ -46,7 +46,7 @@
             <nav>
                 <a href="{{ route('about') }}" wire:navigate wire:current="is-current">About Us</a>
                 <details class="site-mobile-products">
-                    <summary>Products <span aria-hidden="true">⌄</span></summary>
+                    <summary>Products</summary>
                     <div class="site-mobile-products-links">
                         <a href="{{ route('products.index') }}" wire:navigate>Macadamia &amp; Cashew Product Portfolio</a>
                         <a href="{{ route('products.macadamias') }}" wire:navigate>South African Macadamias</a>
