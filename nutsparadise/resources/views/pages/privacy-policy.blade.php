@@ -23,8 +23,9 @@
 
         <section>
             <h2>Information you provide</h2>
-            <p>When you contact Nuts Paradise by email or telephone, we may receive the information you choose to provide, including your name, company, contact details, product requirements, estimated volume, destination market and other information included in your enquiry.</p>
-            <p>The enquiry form on this website prepares an email in your own email application. The website does not submit or store the completed form in a Nuts Paradise website database. Your information is transmitted to Nuts Paradise only when you choose to send the prepared email.</p>
+            <p>When you contact Nuts Paradise by email, telephone or WhatsApp, we may receive the information you choose to provide, including your name, company, contact details, product requirements, estimated volume, destination market and other information included in your enquiry.</p>
+            <p>The email enquiry form on this website prepares an email in your own email application. The website does not submit or store the completed form in a Nuts Paradise website database. Your information is transmitted to Nuts Paradise only when you choose to send the prepared email.</p>
+            <p>The floating WhatsApp form opens WhatsApp with the message you type. The website does not send that message to Nuts Paradise itself; the message is transferred to WhatsApp only when you choose to continue to the WhatsApp service.</p>
         </section>
 
         <section>
@@ -35,12 +36,18 @@
         <section>
             <h2>Technical website information</h2>
             <p>Like most websites, the hosting and security systems supporting this site may process technical information such as IP address, browser information, requested pages and server logs as necessary to deliver, secure and maintain the website.</p>
-            <p>The Contact page includes an embedded Google Map. Google may process technical information when that map is loaded in accordance with its own privacy practices.</p>
         </section>
 
         <section>
-            <h2>Cookies and local storage</h2>
-            <p>The website may use essential technical cookies or browser storage required for security, navigation and core functionality. Third-party embedded services may use their own cookies or similar technologies.</p>
+            <h2>Cookies, browser storage and consent</h2>
+            <p>Essential cookies or browser storage may be used where necessary for core functionality, security and to remember the privacy choices you make on this website. The site stores your optional-media preference in your browser so that it does not need to ask on every page. That preference is refreshed after approximately 180 days.</p>
+            <p>Optional external media is disabled by default. Google Maps on the Contact page is not requested from Google until you choose to allow external media. If you reject optional media, the rest of the website remains available.</p>
+            <p>You can accept, reject or manage optional media from the consent notice. After making a choice, you can reopen <button type="button" class="site-footer-cookie-button" data-cookie-settings>Cookie settings</button> from any page and change or withdraw that choice.</p>
+        </section>
+
+        <section>
+            <h2>Third-party services</h2>
+            <p>If you allow external media, the Contact page can load Google Maps. Google may then process technical information in accordance with its own privacy practices. If you use the WhatsApp contact option, you leave this website for WhatsApp, a service operated by Meta, and that service applies its own privacy practices.</p>
         </section>
 
         <section>

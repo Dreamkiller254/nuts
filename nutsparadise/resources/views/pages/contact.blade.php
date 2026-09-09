@@ -50,15 +50,28 @@
                     <div><span class="np-label">Johannesburg office</span><strong>222 Smit Street, Braamfontein 2000, Johannesburg, South Africa</strong></div>
                 </div>
             </div>
-            <div class="contact-map-wrap">
+            <div class="contact-map-wrap" data-cookie-media="external">
+                <div class="np-media-consent" data-cookie-placeholder>
+                    <svg viewBox="0 0 32 32" aria-hidden="true" focusable="false">
+                        <path d="M16 28s8-7.38 8-15a8 8 0 1 0-16 0c0 7.62 8 15 8 15Z" fill="none" stroke="currentColor" stroke-width="1.8"/>
+                        <circle cx="16" cy="13" r="3" fill="none" stroke="currentColor" stroke-width="1.8"/>
+                    </svg>
+                    <span class="np-label">External media</span>
+                    <h3>View our Johannesburg office map</h3>
+                    <p>Google Maps is optional and will load only if you allow external media. You can change this choice later from Cookie settings.</p>
+                    <button type="button" class="np-button lime" data-cookie-allow-media>Allow &amp; Load Map <span aria-hidden="true">↗</span></button>
+                </div>
                 <iframe
                     title="Nuts Paradise Johannesburg office at 222 Smit Street"
-                    src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3580.437839204333!2d28.038759904556!3d-26.194373601498437!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x1e950c1f5b0c5207%3A0x4b302f20b8dc8175!2s222%20Smit%20St%2C%20Braamfontein%2C%20Johannesburg%2C%202017%2C%20South%20Africa!5e0!3m2!1sen!2ske!4v1742303428780!5m2!1sen!2ske"
+                    src="about:blank"
+                    data-cookie-frame
+                    data-cookie-src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3580.437839204333!2d28.038759904556!3d-26.194373601498437!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x1e950c1f5b0c5207%3A0x4b302f20b8dc8175!2s222%20Smit%20St%2C%20Braamfontein%2C%20Johannesburg%2C%202017%2C%20South%20Africa!5e0!3m2!1sen!2ske!4v1742303428780!5m2!1sen!2ske"
                     width="600"
                     height="450"
                     loading="lazy"
                     referrerpolicy="no-referrer-when-downgrade"
-                    allowfullscreen>
+                    allowfullscreen
+                    hidden>
                 </iframe>
             </div>
         </div>

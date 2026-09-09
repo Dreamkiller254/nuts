@@ -31,6 +31,7 @@
         <link rel="stylesheet" href="{{ asset('assets/site-public.css') }}">
         <link rel="stylesheet" href="{{ asset('assets/content-pages.css') }}">
         <link rel="stylesheet" href="{{ asset('assets/launch.css') }}">
+        <link rel="stylesheet" href="{{ asset('assets/privacy-chat.css') }}">
     </head>
     <body class="np-site {{ $bodyClass }}">
         <a class="skip-link" href="#main">Skip to content</a>
@@ -63,7 +64,16 @@
 
         <x-site.footer />
 
+        @persist('site-whatsapp')
+            <x-site.whatsapp-chat />
+        @endpersist
+
+        @persist('site-cookie-consent')
+            <x-site.cookie-consent />
+        @endpersist
+
         @livewireScripts
         <script src="{{ asset('assets/site.js') }}" data-navigate-once defer></script>
+        <script src="{{ asset('assets/site-experience.js') }}" data-navigate-once defer></script>
     </body>
 </html>

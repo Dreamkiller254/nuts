@@ -108,6 +108,41 @@ class PublicSiteTest extends TestCase
             ->assertDontSee('<loc>https://nutsparadise.co.za/terms-of-use</loc>', false);
     }
 
+    public function test_whatsapp_and_cookie_controls_render_on_public_pages(): void
+    {
+        $this->get('/')
+            ->assertOk()
+            ->assertSee('data-whatsapp-chat', false)
+            ->assertSee('data-whatsapp-number="27760204666"', false)
+            ->assertSee('action="https://wa.me/27760204666"', false)
+            ->assertSee('data-cookie-banner', false)
+            ->assertSee('data-cookie-accept', false)
+            ->assertSee('data-cookie-reject', false)
+            ->assertSee('data-cookie-external-media', false)
+            ->assertSee('Cookie settings', false);
+    }
+
+    public function test_google_map_is_blocked_until_external_media_consent(): void
+    {
+        $this->get('/contact')
+            ->assertOk()
+            ->assertSee('data-cookie-media="external"', false)
+            ->assertSee('src="about:blank"', false)
+            ->assertSee('data-cookie-src="https://www.google.com/maps/embed', false)
+            ->assertSee('data-cookie-allow-media', false)
+            ->assertSee('Google Maps is optional and will load only if you allow external media.', false);
+    }
+
+    public function test_privacy_policy_explains_cookie_and_whatsapp_controls(): void
+    {
+        $this->get('/privacy-policy')
+            ->assertOk()
+            ->assertSee('Cookies, browser storage and consent', false)
+            ->assertSee('Optional external media is disabled by default.', false)
+            ->assertSee('floating WhatsApp form', false)
+            ->assertSee('data-cookie-settings', false);
+    }
+
     public function test_removed_photography_page_returns_not_found(): void
     {
         $this->get('/photography')
