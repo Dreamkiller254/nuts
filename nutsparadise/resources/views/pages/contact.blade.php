@@ -32,7 +32,6 @@
                 <label>Estimated volume<input name="estimated_volume" placeholder="e.g. 10 MT per month" required></label>
                 <label class="full">Destination market<input name="destination_market" required></label>
                 <label class="full">Message<textarea name="message" rows="5" placeholder="Specifications, timing or other requirements"></textarea></label>
-                <label class="full consent"><input type="checkbox" name="consent" required><span>I understand this form currently checks my enquiry details only and does not submit or store them. Production consent wording will be added when online submissions are enabled.</span></label>
             </div>
             <button class="np-button lime" type="submit">Check Enquiry Details <span aria-hidden="true">↗</span></button>
             <p class="form-preview-note">Enquiry preview · Nothing is sent or stored.</p>
