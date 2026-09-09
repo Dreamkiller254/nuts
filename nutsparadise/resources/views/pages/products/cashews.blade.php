@@ -36,7 +36,7 @@
                 </div>
             </div>
             <div class="product-detail-image reveal">
-                <img src="{{ asset('assets/photos/cashews.jpg') }}" alt="Close-up of curved cream-coloured cashew kernels" loading="lazy">
+                <img src="{{ asset('assets/photos/cashews.webp') }}" alt="Close-up of curved cream-coloured cashew kernels" width="1500" height="2250" loading="lazy">
             </div>
         </div>
     </section>

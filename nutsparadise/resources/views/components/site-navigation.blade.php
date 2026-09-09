@@ -2,7 +2,7 @@
 
 <nav class="site-nav" aria-label="Primary navigation">
     <a class="site-brand" href="{{ route('home') }}" wire:navigate>
-        <img class="site-logo" src="{{ asset('logo.png') }}" alt="{{ config('app.name', 'Nuts Paradise') }}">
+        <img class="site-logo" src="{{ asset('logo.webp') }}" alt="{{ config('app.name', 'Nuts Paradise') }}" width="500" height="287">
     </a>
 
     <div class="site-nav-links">

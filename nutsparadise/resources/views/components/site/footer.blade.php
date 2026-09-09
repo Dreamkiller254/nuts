@@ -3,7 +3,7 @@
         <div class="np-footer-top">
             <div>
                 <a class="np-brand" href="{{ route('home') }}" wire:navigate>
-                    <img class="np-logo" src="{{ asset('logo.png') }}" alt="Nuts Paradise">
+                    <img class="np-logo" src="{{ asset('logo.webp') }}" alt="Nuts Paradise" width="500" height="287">
                 </a>
                 <p>South African macadamia &amp; cashew processing for global markets.</p>
             </div>

@@ -14,12 +14,17 @@
         <meta name="viewport" content="width=device-width,initial-scale=1">
         <x-site.seo :title="$title" :description="$description" :robots="$robots" :image="$image" :image-alt="$imageAlt" />
         @if($preloadImage)
-            <link rel="preload" as="image" href="{{ asset($preloadImage) }}" fetchpriority="high">
+            @if($preloadImage === 'assets/photos/orchard-canopy.jpg')
+                <link rel="preload" as="image" type="image/webp" href="{{ asset('assets/photos/orchard-canopy-mobile.webp') }}" media="(max-width: 767px)" fetchpriority="high">
+                <link rel="preload" as="image" type="image/webp" href="{{ asset('assets/photos/orchard-canopy-desktop.webp') }}" media="(min-width: 768px)" fetchpriority="high">
+            @else
+                <link rel="preload" as="image" type="image/webp" href="{{ asset(str($preloadImage)->replaceEnd('.jpg', '.webp')) }}" fetchpriority="high">
+            @endif
         @endif
         <link rel="icon" type="image/png" href="{{ asset('favicon.png') }}">
         <link rel="apple-touch-icon" href="{{ asset('favicon.png') }}">
-        @vite(['resources/css/app.css', 'resources/js/app.js'])
-        @fluxAppearance
+        {{-- Public pages use their dedicated, approved CSS bundles. Avoid loading the
+             dashboard-only Flux/Tailwind bundle here to keep first render lean. --}}
         <link rel="stylesheet" href="{{ asset('assets/common.css') }}">
         <link rel="stylesheet" href="{{ asset('assets/concept-3.css') }}">
         <link rel="stylesheet" href="{{ asset('assets/design3.css') }}">
@@ -58,7 +63,7 @@
 
         <x-site.footer />
 
-        @fluxScripts
+        @livewireScripts
         <script src="{{ asset('assets/site.js') }}" data-navigate-once defer></script>
     </body>
 </html>

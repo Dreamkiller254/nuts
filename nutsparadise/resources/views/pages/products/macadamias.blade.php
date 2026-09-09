@@ -26,7 +26,7 @@
     <section class="product-detail-band">
         <div class="np-container product-detail-grid">
             <div class="product-detail-image reveal">
-                <img src="{{ asset('assets/photos/macadamias.jpg') }}" alt="Whole and cracked macadamias showing pale kernels" loading="lazy">
+                <img src="{{ asset('assets/photos/macadamias.webp') }}" alt="Whole and cracked macadamias showing pale kernels" width="1800" height="1200" loading="lazy">
             </div>
             <div class="product-detail-copy reveal">
                 <span class="np-label">What to send us</span>

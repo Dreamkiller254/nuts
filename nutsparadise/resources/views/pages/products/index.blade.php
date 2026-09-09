@@ -20,7 +20,7 @@
 
         <div class="product-gateway-grid">
             <article class="product-gateway-card reveal">
-                <div class="product-gateway-image"><img src="{{ asset('assets/photos/macadamia-dark.jpg') }}" alt="Close-up of macadamia nuts" loading="lazy"></div>
+                <div class="product-gateway-image"><img src="{{ asset('assets/photos/macadamia-dark.webp') }}" alt="Close-up of macadamia nuts" width="1800" height="3200" loading="lazy"></div>
                 <div class="product-gateway-copy">
                     <span class="np-label">01 / Macadamias</span>
                     <h3>South African-processed macadamias</h3>
@@ -29,7 +29,7 @@
                 </div>
             </article>
             <article class="product-gateway-card reveal">
-                <div class="product-gateway-image"><img src="{{ asset('assets/photos/cashews.jpg') }}" alt="Close-up of curved cashew kernels" loading="lazy"></div>
+                <div class="product-gateway-image"><img src="{{ asset('assets/photos/cashews.webp') }}" alt="Close-up of curved cashew kernels" width="1500" height="2250" loading="lazy"></div>
                 <div class="product-gateway-copy">
                     <span class="np-label">02 / Cashews</span>
                     <h3>Cashews prepared for professional supply</h3>

@@ -1,7 +1,7 @@
 <header class="site-header-shell">
     <div class="site-header np-container">
         <a class="np-brand" href="{{ route('home') }}" wire:navigate aria-label="Nuts Paradise home">
-            <img class="np-logo" src="{{ asset('logo.png') }}" alt="Nuts Paradise">
+            <img class="np-logo" src="{{ asset('logo.webp') }}" alt="Nuts Paradise" width="500" height="287">
         </a>
 
         <nav class="site-desktop-nav" aria-label="Main navigation">
