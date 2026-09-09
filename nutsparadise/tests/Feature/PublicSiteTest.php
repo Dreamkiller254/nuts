@@ -108,7 +108,7 @@ class PublicSiteTest extends TestCase
             ->assertDontSee('<loc>https://nutsparadise.co.za/terms-of-use</loc>', false);
     }
 
-    public function test_whatsapp_and_cookie_controls_render_on_public_pages(): void
+    public function test_whatsapp_and_simple_cookie_controls_render_on_public_pages(): void
     {
         $this->get('/')
             ->assertOk()
@@ -116,10 +116,13 @@ class PublicSiteTest extends TestCase
             ->assertSee('data-whatsapp-number="27760204666"', false)
             ->assertSee('action="https://wa.me/27760204666"', false)
             ->assertSee('data-cookie-banner', false)
+            ->assertSee('We use essential storage and optional external media.', false)
             ->assertSee('data-cookie-accept', false)
+            ->assertSee('>Accept</button>', false)
             ->assertSee('data-cookie-reject', false)
-            ->assertSee('data-cookie-external-media', false)
-            ->assertSee('Cookie settings', false);
+            ->assertSee('>Reject</button>', false)
+            ->assertDontSee('Manage choices', false)
+            ->assertDontSee('Choose what you allow', false);
     }
 
     public function test_google_map_is_blocked_until_external_media_consent(): void
@@ -130,7 +133,7 @@ class PublicSiteTest extends TestCase
             ->assertSee('src="about:blank"', false)
             ->assertSee('data-cookie-src="https://www.google.com/maps/embed', false)
             ->assertSee('data-cookie-allow-media', false)
-            ->assertSee('Google Maps is optional and will load only if you allow external media.', false);
+            ->assertSee('Google Maps loads only with optional media consent.', false);
     }
 
     public function test_privacy_policy_explains_cookie_and_whatsapp_controls(): void
