@@ -1,0 +1,15 @@
+.logistics { background: #e8e9db; }
+.logistics-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 90px; align-items: center; }
+.logistics-copy > .np-body { max-width: 450px; color: #67746a; }
+.logistics-points { margin-top: 30px; }
+.logistics-points > div { display: flex; gap: 25px; border-top: 1px solid #173c2f30; padding: 20px 0; }
+.logistics-points > div > span { font-size: 12px; color: #79815e; padding-top: 3px; }
+.logistics-points p { margin: 0; color: #67746a; font-size: 12px; line-height: 1.6; }
+.logistics-points strong { display: block; margin-bottom: 5px; color: #173c2f; font-size: 14px; }
+.logistics-image { position: relative; height: 560px; }
+.logistics-image img { width: 100%; height: 100%; object-fit: cover; }
+.np-logo { display: block; width: 155px; height: auto; }
+.cinema .np-logo { filter: brightness(0) invert(1); }
+.np-footer .np-logo { width: 175px; }
+@media (max-width: 1000px) { .logistics-grid { gap: 45px; } .logistics-image { height: 500px; } }
+@media (max-width: 700px) { .logistics-grid { grid-template-columns: 1fr; gap: 35px; } .logistics-image { height: 400px; } .np-logo, .np-footer .np-logo { width: 125px; } }

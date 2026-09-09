@@ -1,0 +1,18 @@
+
+
+# The Laravel app lives in a new, isolated folder. Keep certificate-validation
+# files available at the document root, then let Laravel's own public/.htaccess
+# handle the front-controller rewrite.
+RewriteEngine On
+# Leave certificate-validation files at the document root. Other well-known
+# endpoints (for example Livewire's passkey discovery route) belong to Laravel.
+RewriteRule ^\.well-known/(?:acme-challenge|pki-validation)(?:/|$) - [L]
+RewriteCond %{REQUEST_URI} !^/nutsparadise/public(?:/|$)
+RewriteRule ^(.*)$ nutsparadise/public/$1 [L]
+
+# php -- BEGIN cPanel-generated handler, do not edit
+# Set the “ea-php84” package as the default “PHP” programming language.
+<IfModule mime_module>
+  AddHandler application/x-httpd-ea-php84 .php .php8 .phtml
+</IfModule>
+# php -- END cPanel-generated handler, do not edit
