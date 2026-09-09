@@ -29,9 +29,9 @@
                 <label>Business email<input name="email" type="email" autocomplete="email" required></label>
                 <label>Country<input name="country" autocomplete="country-name" required></label>
                 <label>Product interest<select name="product_interest" required><option value="">Select product</option><option>Macadamias</option><option>Cashews</option><option>Both</option></select></label>
-                <label>Estimated volume<input name="estimated_volume" placeholder="e.g. 10 MT per month" required></label>
+                <label>Estimated volume<input name="estimated_volume" required></label>
                 <label class="full">Destination market<input name="destination_market" required></label>
-                <label class="full">Message<textarea name="message" rows="5" placeholder="Specifications, timing or other requirements"></textarea></label>
+                <label class="full">Message<textarea name="message" rows="5"></textarea></label>
             </div>
             <button class="np-button lime" type="submit">Prepare Email Enquiry <span aria-hidden="true">↗</span></button>
             <p class="form-status" role="status" aria-live="polite"></p>
