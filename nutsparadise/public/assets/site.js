@@ -20,6 +20,8 @@
             '/buyers': 'Loading buyer information',
             '/export-markets': 'Loading export markets',
             '/contact': 'Loading contact',
+            '/privacy-policy': 'Loading privacy policy',
+            '/terms-of-use': 'Loading terms of use',
         };
 
         return labels[path] || 'Loading page';
@@ -81,6 +83,18 @@
         menu.querySelectorAll('a').forEach(link => link.addEventListener('click', closeMobileMenu));
     };
 
+    const syncActiveNavigation = () => {
+        const currentPath = window.location.pathname.replace(/\/$/, '') || '/';
+        document.querySelectorAll('.site-desktop-nav a, .site-mobile-menu nav a').forEach(link => {
+            const linkPath = new URL(link.href, window.location.origin).pathname.replace(/\/$/, '') || '/';
+            const productsParent = linkPath === '/products' && currentPath.startsWith('/products/');
+            const isCurrent = linkPath === currentPath || productsParent;
+            link.classList.toggle('is-current', isCurrent);
+            if (isCurrent) link.setAttribute('aria-current', 'page');
+            else link.removeAttribute('aria-current');
+        });
+    };
+
     const initialiseReveal = () => {
         document.documentElement.classList.remove('motion-ready');
         document.querySelectorAll('.reveal.pending').forEach(element => element.classList.remove('pending'));
@@ -100,9 +114,44 @@
         });
     };
 
+    const initialisePreviewForms = () => {
+        document.querySelectorAll('[data-preview-form]').forEach(form => {
+            if (form.dataset.initialised === 'true') return;
+            form.dataset.initialised = 'true';
+
+            form.addEventListener('submit', event => {
+                event.preventDefault();
+                const status = form.querySelector('.form-status');
+                const requiredFields = [...form.querySelectorAll('[required]')];
+                let firstInvalid = null;
+
+                requiredFields.forEach(field => {
+                    const invalid = !field.checkValidity();
+                    field.classList.toggle('is-invalid', invalid);
+                    if (invalid && !firstInvalid) firstInvalid = field;
+                });
+
+                if (firstInvalid) {
+                    if (status) status.textContent = 'Please complete the required fields before reviewing the enquiry.';
+                    firstInvalid.focus();
+                    return;
+                }
+
+                if (status) status.textContent = 'Your enquiry details look complete. Preview only — nothing has been sent or stored.';
+            });
+
+            form.querySelectorAll('input, select, textarea').forEach(field => {
+                field.addEventListener('input', () => field.classList.remove('is-invalid'));
+                field.addEventListener('change', () => field.classList.remove('is-invalid'));
+            });
+        });
+    };
+
     const afterNavigation = () => {
         initialiseMenu();
+        syncActiveNavigation();
         initialiseReveal();
+        initialisePreviewForms();
         hideTransition();
 
         if (navigationStartedAt) {
