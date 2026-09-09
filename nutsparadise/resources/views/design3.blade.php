@@ -143,7 +143,7 @@
                     <div><a class="np-brand" href="{{ route('home') }}"><img class="np-logo" src="{{ asset('logo.webp') }}" alt="Nuts Paradise" width="500" height="287"></a><p>South African macadamia &amp; cashew processing. From African origin to global market.</p></div>
                     <nav aria-label="Footer navigation"><a href="#about">Our story</a><a href="#products">Products</a><a href="#processing">Processing</a><a href="#logistics">Our reach</a><a href="#enquiry" data-enquiry>Let's talk ↗</a></nav>
                 </div>
-                <div class="np-footer-bottom"><span>Riverside Park · Mbombela · South Africa</span><a href="{{ route('photography') }}" wire:navigate>Photography details ↗</a></div>
+                <div class="np-footer-bottom"><span>Riverside Park · Mbombela · South Africa</span></div>
             </div>
         </footer>
 

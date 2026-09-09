@@ -36,6 +36,8 @@
                     <a href="{{ route('processing') }}" wire:navigate>Processing</a>
                     <a href="{{ route('quality') }}" wire:navigate>Quality &amp; Certification</a>
                     <a href="{{ route('traceability') }}" wire:navigate>Traceability</a>
+                    <a href="{{ route('privacy') }}" wire:navigate>Privacy Policy</a>
+                    <a href="{{ route('terms') }}" wire:navigate>Terms of Use</a>
                 </div>
                 <div>
                     <span class="site-footer-heading">Products</span>
@@ -57,8 +59,6 @@
         <div class="site-footer-bottom">
             <span>© {{ now()->year }} Nuts Paradise</span>
             <span class="site-footer-credit">Designed by <a href="https://webunbounded.com/" target="_blank" rel="noopener noreferrer">Web Unbounded</a></span>
-            <span class="site-footer-note">Macadamia &amp; cashew processor &amp; exporter · South Africa</span>
-            <span class="site-legal-links"><a href="{{ route('privacy') }}" wire:navigate>Privacy Policy</a><a href="{{ route('terms') }}" wire:navigate>Terms of Use</a><a href="{{ route('photography') }}" wire:navigate>Photography</a></span>
         </div>
     </div>
 </footer>

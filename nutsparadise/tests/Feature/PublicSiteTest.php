@@ -22,7 +22,6 @@ class PublicSiteTest extends TestCase
             'contact',
             'privacy',
             'terms',
-            'photography',
         ];
 
         foreach ($routes as $route) {
@@ -44,10 +43,10 @@ class PublicSiteTest extends TestCase
             ->assertSee(route('contact'), false);
     }
 
-    public function test_photography_credits_are_not_indexed(): void
+    public function test_removed_photography_page_returns_not_found(): void
     {
-        $this->get(route('photography'))
-            ->assertOk()
+        $this->get('/photography')
+            ->assertNotFound()
             ->assertSee('<meta name="robots" content="noindex,follow">', false);
     }
 

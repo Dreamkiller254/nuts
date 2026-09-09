@@ -13,7 +13,6 @@
         'contact' => 'Contact Us',
         'privacy' => 'Privacy Policy',
         'terms' => 'Terms of Use',
-        'photography' => 'Photography Credits',
     ];
 @endphp
 

@@ -25,7 +25,6 @@
             '/contact': 'Loading contact',
             '/privacy-policy': 'Loading privacy policy',
             '/terms-of-use': 'Loading terms of use',
-            '/photography': 'Loading photography credits',
         };
 
         return labels[path] || 'Loading page';

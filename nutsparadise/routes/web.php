@@ -16,7 +16,6 @@ Route::view('/contact', 'pages.contact')->name('contact');
 Route::view('/privacy-policy', 'pages.privacy-policy')->name('privacy');
 Route::view('/terms-of-use', 'pages.terms-of-use')->name('terms');
 Route::redirect('/quality', '/quality-certification', 301);
-Route::view('/photography', 'design3.photography')->name('photography');
 
 Route::get('/sitemap.xml', function () {
     $routes = [
