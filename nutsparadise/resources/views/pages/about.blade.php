@@ -39,7 +39,7 @@
                 <article class="location-card reveal">
                     <span class="np-label">Administrative office</span>
                     <strong>Braamfontein</strong>
-                    <p>Smit Street, Braamfontein 2000, Johannesburg, South Africa</p>
+                    <p>222 Smit Street, Braamfontein 2000, Johannesburg, South Africa</p>
                     <small>Administrative office</small>
                 </article>
             </div>

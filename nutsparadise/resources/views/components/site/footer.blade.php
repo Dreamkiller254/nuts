@@ -24,7 +24,7 @@
                     </div>
                     <div class="site-footer-location-card">
                         <strong>Administrative office</strong>
-                        <p>Smit Street, Braamfontein 2000, Johannesburg, South Africa</p>
+                        <p>222 Smit Street, Braamfontein 2000, Johannesburg, South Africa</p>
                     </div>
                 </div>
             </div>
@@ -48,6 +48,8 @@
                     <a href="{{ route('buyers') }}" wire:navigate>For Buyers</a>
                     <a href="{{ route('export-markets') }}" wire:navigate>Export Markets</a>
                     <a href="{{ route('contact') }}" wire:navigate>Contact Nuts Paradise</a>
+                    <a href="tel:+27760204666">+27 76 020 4666</a>
+                    <a href="mailto:info@nutsparadise.co.za">info@nutsparadise.co.za</a>
                 </div>
             </nav>
         </div>
