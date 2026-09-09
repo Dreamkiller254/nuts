@@ -2,9 +2,12 @@
     title="Nuts Paradise | South African Macadamia & Cashew Processor & Exporter"
     description="Nuts Paradise processes and exports macadamia and cashew products from South Africa. FSSC 22000 certified processing in Mbombela with 1,000 MT monthly capacity."
     body-class="home-page"
+    image="assets/photos/orchard-canopy.jpg"
+    image-alt="Illustrative aerial orchard photography representing African agricultural origin"
+    preload-image="assets/photos/orchard-canopy.jpg"
 >
     <section class="cinema home-cinema">
-        <img class="cinema-image" src="{{ asset('assets/photos/orchard-canopy.jpg') }}" alt="An aerial study of lush orchard trees arranged in rows" fetchpriority="high">
+        <img class="cinema-image" src="{{ asset('assets/photos/orchard-canopy.jpg') }}" alt="An aerial study of lush orchard trees arranged in rows" fetchpriority="high" decoding="async">
         <div class="hero np-container">
             <div class="hero-topline">
                 <span class="np-label">South African processor &amp; exporter</span>
@@ -57,12 +60,12 @@
             </div>
             <div class="collection-grid">
                 <article class="collection-card reveal">
-                    <div class="product-image"><img src="{{ asset('assets/photos/macadamias.jpg') }}" alt="Whole and cracked macadamias showing pale kernels" loading="lazy"><span class="product-no">01</span></div>
+                    <div class="product-image"><img src="{{ asset('assets/photos/macadamias.jpg') }}" alt="Whole and cracked macadamias showing pale kernels" loading="lazy" decoding="async"><span class="product-no">01</span></div>
                     <div class="collection-info"><div><span class="np-label">South African processed</span><h3>Macadamias</h3></div><a href="{{ route('products.macadamias') }}" wire:navigate class="round-link" aria-label="Explore macadamias">↗</a></div>
                     <p class="np-body">Macadamia products processed in South Africa around approved professional buyer requirements.</p>
                 </article>
                 <article class="collection-card reveal">
-                    <div class="product-image"><img src="{{ asset('assets/photos/cashews.jpg') }}" alt="A close-up of curved cream-coloured cashew kernels" loading="lazy"><span class="product-no">02</span></div>
+                    <div class="product-image"><img src="{{ asset('assets/photos/cashews.jpg') }}" alt="A close-up of curved cream-coloured cashew kernels" loading="lazy" decoding="async"><span class="product-no">02</span></div>
                     <div class="collection-info"><div><span class="np-label">Professional supply</span><h3>Cashews</h3></div><a href="{{ route('products.cashews') }}" wire:navigate class="round-link" aria-label="Explore cashews">↗</a></div>
                     <p class="np-body">Cashew products prepared around agreed specifications and professional buyer requirements.</p>
                 </article>
@@ -72,7 +75,7 @@
 
     <section class="process np-section">
         <div class="np-container process-grid">
-            <div class="process-image reveal"><img src="{{ asset('assets/photos/harvest-hands.jpg') }}" alt="Hands holding freshly gathered macadamia nuts" loading="lazy"><span class="photo-caption">ORIGIN STUDY · ILLUSTRATIVE PHOTOGRAPHY</span></div>
+            <div class="process-image reveal"><img src="{{ asset('assets/photos/harvest-hands.jpg') }}" alt="Hands holding freshly gathered macadamia nuts" loading="lazy" decoding="async"><span class="photo-caption">ORIGIN STUDY · ILLUSTRATIVE PHOTOGRAPHY</span></div>
             <div class="process-copy reveal">
                 <span class="np-label">Processing in Mbombela</span>
                 <h2>Built around<br><em>buyer requirements.</em></h2>
