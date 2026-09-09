@@ -18,6 +18,7 @@
         <link rel="stylesheet" href="{{ asset('assets/concept-3.css') }}">
         <link rel="stylesheet" href="{{ asset('assets/design3.css') }}">
         <link rel="stylesheet" href="{{ asset('assets/site-public.css') }}">
+        <link rel="stylesheet" href="{{ asset('assets/content-pages.css') }}">
     </head>
     <body class="np-site {{ $bodyClass }}">
         <a class="skip-link" href="#main">Skip to content</a>
