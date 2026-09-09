@@ -1,4 +1,4 @@
-<footer class="np-footer site-footer">
+<footer class="site-footer">
     <div class="np-container">
         <div class="site-footer-feature">
             <div class="site-footer-brand">
