@@ -19,7 +19,7 @@
         </div>
         <div class="content-rich-copy">
             <p class="large-copy">Riverside Park Industrial Zone, Rapid Street, Riverside Park, Mbombela, South Africa.</p>
-            <p class="np-body">The processing story stays deliberately practical: understand the buyer brief, align preparation, maintain quality oversight and coordinate the documentation and export-preparation requirements that follow.</p>
+            <p class="np-body">The process begins with the buyer brief: understand the product requirement, align preparation, maintain quality oversight and coordinate the documentation and export-preparation requirements that follow.</p>
         </div>
     </section>
 
@@ -28,7 +28,7 @@
             <article class="journey-step reveal"><span>01</span><h3>Understand the requirement</h3><p>Product, specification, volume, destination and timing form the starting brief.</p></article>
             <article class="journey-step reveal"><span>02</span><h3>Align processing</h3><p>Preparation is discussed against the buyer's agreed product requirements.</p></article>
             <article class="journey-step reveal"><span>03</span><h3>Quality oversight</h3><p>Processing is supported by the quality-management framework used for macadamias and cashews.</p></article>
-            <article class="journey-step reveal"><span>04</span><h3>Export preparation</h3><p>Documentation and shipment requirements are coordinated around the transaction without inventing unsupported logistics claims.</p></article>
+            <article class="journey-step reveal"><span>04</span><h3>Export preparation</h3><p>Documentation and shipment requirements are coordinated around the needs of the transaction and intended market.</p></article>
         </div>
     </section>
 
@@ -42,7 +42,7 @@
         <div class="np-container reveal">
             <span class="np-label">Processing story</span>
             <h2>Macadamia and cashew processing<br><em>prepared for global buyers.</em></h2>
-            <p class="np-body">From orchard origin and product handling to quality oversight and export preparation, Nuts Paradise connects South African nut processing with the requirements of international food, retail and ingredient buyers.</p>
+            <p class="np-body">From product handling to quality oversight and export preparation, Nuts Paradise connects South African nut processing with the requirements of international food, retail and ingredient buyers.</p>
         </div>
     </section>
 
