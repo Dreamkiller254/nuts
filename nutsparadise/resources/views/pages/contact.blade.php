@@ -14,7 +14,7 @@
         <div class="contact-intro reveal">
             <span class="np-label">Buyer enquiry</span>
             <h2>Product. Volume.<br><em>Destination. Timing.</em></h2>
-            <p class="np-body">Use the enquiry form to prepare the details needed for a buyer conversation. Online submission is not enabled yet, so nothing entered here is sent or stored.</p>
+            <p class="np-body">Complete the enquiry brief and we will prepare an email to the Nuts Paradise team using the details you provide. You can review the message in your email application before sending it.</p>
 
             <div class="contact-location-list">
                 <div><span class="np-label">Processing facility</span><strong>Mbombela</strong><p>Riverside Park Industrial Zone, Rapid Street, Riverside Park, Mbombela, South Africa</p></div>
@@ -22,7 +22,7 @@
             </div>
         </div>
 
-        <form class="buyer-enquiry-form reveal" data-preview-form novalidate>
+        <form class="buyer-enquiry-form reveal" data-email-enquiry-form novalidate>
             <div class="form-grid">
                 <label>Full name<input name="full_name" autocomplete="name" required></label>
                 <label>Company<input name="company" autocomplete="organization" required></label>
@@ -33,7 +33,7 @@
                 <label class="full">Destination market<input name="destination_market" required></label>
                 <label class="full">Message<textarea name="message" rows="5" placeholder="Specifications, timing or other requirements"></textarea></label>
             </div>
-            <button class="np-button lime" type="submit">Check Enquiry Details <span aria-hidden="true">↗</span></button>
+            <button class="np-button lime" type="submit">Prepare Email Enquiry <span aria-hidden="true">↗</span></button>
             <p class="form-status" role="status" aria-live="polite"></p>
         </form>
     </section>
