@@ -25,6 +25,7 @@
         <link rel="stylesheet" href="{{ asset('assets/design3.css') }}">
         <link rel="stylesheet" href="{{ asset('assets/site-public.css') }}">
         <link rel="stylesheet" href="{{ asset('assets/content-pages.css') }}">
+        <link rel="stylesheet" href="{{ asset('assets/launch.css') }}">
     </head>
     <body class="np-site {{ $bodyClass }}">
         <a class="skip-link" href="#main">Skip to content</a>
@@ -47,6 +48,7 @@
                     </div>
                 </div>
             </div>
+            <span class="sr-only" id="np-navigation-status" role="status" aria-live="polite" aria-atomic="true"></span>
         @endpersist
 
         <main id="main" tabindex="-1">
