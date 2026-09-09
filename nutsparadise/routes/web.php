@@ -18,6 +18,28 @@ Route::view('/terms-of-use', 'pages.terms-of-use')->name('terms');
 Route::redirect('/quality', '/quality-certification', 301);
 Route::view('/photography', 'design3.photography')->name('photography');
 
+Route::get('/sitemap.xml', function () {
+    $routes = [
+        'home',
+        'about',
+        'products.index',
+        'products.macadamias',
+        'products.cashews',
+        'processing',
+        'quality',
+        'traceability',
+        'buyers',
+        'export-markets',
+        'contact',
+        'privacy',
+        'terms',
+    ];
+
+    return response()
+        ->view('sitemap', ['urls' => array_map(fn (string $route) => route($route), $routes)])
+        ->header('Content-Type', 'application/xml; charset=UTF-8');
+})->name('sitemap');
+
 Route::middleware(['auth', 'verified'])->group(function () {
     Route::view('dashboard', 'dashboard')->name('dashboard');
 });
