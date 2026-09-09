@@ -34,7 +34,6 @@
                 <label class="full">Message<textarea name="message" rows="5" placeholder="Specifications, timing or other requirements"></textarea></label>
             </div>
             <button class="np-button lime" type="submit">Check Enquiry Details <span aria-hidden="true">↗</span></button>
-            <p class="form-preview-note">Enquiry preview · Nothing is sent or stored.</p>
             <p class="form-status" role="status" aria-live="polite"></p>
         </form>
     </section>
