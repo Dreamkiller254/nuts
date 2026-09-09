@@ -18,7 +18,7 @@
             <h2>Processing first.<br><em>Partnership always.</em></h2>
         </div>
         <div class="content-rich-copy">
-            <p class="large-copy">Nuts Paradise is positioned as a processor and exporter, not a broker.</p>
+            <p class="large-copy">Nuts Paradise is a processor and exporter of macadamia and cashew products.</p>
             <p class="np-body">Our role is to connect South African processing capability with the practical requirements of professional buyers: product preparation, quality management, clear communication and export-focused execution.</p>
         </div>
     </section>
@@ -27,7 +27,7 @@
         <div class="np-container">
             <div class="np-section-head reveal">
                 <div><span class="np-label">Two operating locations</span><h2>Processing in Mbombela.<br><em>Administration in Johannesburg.</em></h2></div>
-                <p class="np-body">The website separates the processing facility from the administrative office so buyers can understand how the business is structured.</p>
+                <p class="np-body">Processing is centred at Riverside Park in Mbombela, supported by the administrative office in Johannesburg.</p>
             </div>
             <div class="location-cards">
                 <article class="location-card reveal">
@@ -49,7 +49,7 @@
     <section class="np-section np-container">
         <div class="np-section-head reveal">
             <div><span class="np-label">How we support buyers</span><h2>Operational confidence,<br><em>made visible.</em></h2></div>
-            <p class="np-body">The public story focuses on the capabilities we can state without inventing commercial or technical claims.</p>
+            <p class="np-body">Our buyer conversations centre on processing capability, quality management, export preparation and the specific requirements of each enquiry.</p>
         </div>
         <div class="capability-grid">
             <article class="capability-card reveal"><span>01</span><h3>Processing Expertise</h3><p>South African macadamia and cashew processing aligned to agreed buyer requirements.</p></article>
