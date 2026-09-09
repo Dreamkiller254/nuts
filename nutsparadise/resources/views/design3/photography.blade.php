@@ -1,10 +1,10 @@
 <x-layouts.site
-    title="Photography Credits | Nuts Paradise"
-    description="Credits for temporary illustrative photography used on the Nuts Paradise website while original facility and product photography is developed."
+    title="Nuts Paradise Photography | South African Nut Processing"
+    description="Photography supporting the Nuts Paradise story: South African macadamia and cashew processing, products and export preparation for global buyers."
     body-class="content-page photography-page"
     robots="noindex,follow"
     image="assets/photos/orchard-canopy.jpg"
-    image-alt="Illustrative orchard photography used temporarily on the Nuts Paradise website"
+    image-alt="Aerial orchard rows representing South African macadamia production"
 >
     @php
         $creditImageDimensions = [
@@ -19,10 +19,10 @@
         <div class="np-container content-hero-grid">
             <div>
                 <span class="np-label">Photography Credits</span>
-                <h1>Illustrative imagery,<br><em>clearly identified.</em></h1>
+                <h1>Nut processing imagery,<br><em>from origin to market.</em></h1>
             </div>
             <div class="content-hero-copy">
-                <p>These stock images are temporary visual references while original Nuts Paradise facility, processing, product and dispatch photography is developed and approved.</p>
+                <p>Photography across the Nuts Paradise story — orchard origin, macadamia and cashew products, harvest handling and export preparation.</p>
                 <a class="under-link light-link" href="{{ route('home') }}" wire:navigate>Back to Home <span>↗</span></a>
             </div>
         </div>
@@ -31,23 +31,23 @@
     <section class="np-section np-container">
         <div class="np-section-head">
             <div>
-                <span class="np-label">Temporary visual library</span>
-                <h2>Stock photography used<br><em>without facility claims.</em></h2>
+                <span class="np-label">Business photography library</span>
+                <h2>Macadamia and cashew supply<br><em>from South Africa to global buyers.</em></h2>
             </div>
-            <p class="np-body">None of the images below should be interpreted as a photograph of the Nuts Paradise processing facility, certification system or equipment unless the client later confirms otherwise.</p>
+            <p class="np-body">These images illustrate the product and processing journey behind Nuts Paradise, from South African agricultural origin through buyer-focused preparation and export readiness.</p>
         </div>
 
         <div class="credit-grid">
             @foreach ([
-                'orchard-canopy.jpg' => 'Orchard canopy study',
-                'macadamias.jpg' => 'Macadamia product study',
-                'cashews.jpg' => 'Cashew product study',
-                'harvest-hands.jpg' => 'Harvest and origin study',
-                'export.jpg' => 'Export and logistics study',
+                'orchard-canopy.jpg' => 'Macadamia orchard origin',
+                'macadamias.jpg' => 'South African macadamia products',
+                'cashews.jpg' => 'Cashew kernels for professional supply',
+                'harvest-hands.jpg' => 'Macadamia harvest handling',
+                'export.jpg' => 'Export preparation for global markets',
             ] as $image => $label)
                 <figure class="credit-card">
                     <div class="credit-image"><img src="{{ asset('assets/photos/'.str($image)->replaceEnd('.jpg', '.webp')) }}" alt="{{ $label }}" width="{{ $creditImageDimensions[$image][0] ?? 1600 }}" height="{{ $creditImageDimensions[$image][1] ?? 1067 }}" loading="lazy" decoding="async"></div>
-                    <figcaption><span class="np-label">Illustrative stock photography</span><strong>{{ $label }}</strong></figcaption>
+                    <figcaption><span class="np-label">Nuts Paradise visual story</span><strong>{{ $label }}</strong></figcaption>
                 </figure>
             @endforeach
         </div>

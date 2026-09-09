@@ -3,7 +3,7 @@
     'description',
     'robots' => 'index,follow',
     'image' => null,
-    'imageAlt' => 'Illustrative macadamia photography for Nuts Paradise',
+    'imageAlt' => 'Nuts Paradise macadamia and cashew products for global buyers',
 ])
 @php
     $canonical = url()->current();

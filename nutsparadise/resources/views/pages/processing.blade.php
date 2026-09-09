@@ -40,9 +40,9 @@
 
     <section class="media-note-panel">
         <div class="np-container reveal">
-            <span class="np-label">Photography note</span>
-            <h2>Real facility photography<br><em>will replace the temporary imagery.</em></h2>
-            <p class="np-body">Exterior, receiving, processing, quality inspection and dispatch imagery should be added only when approved Nuts Paradise photography is available. Current stock imagery is illustrative and does not represent the Riverside Park facility.</p>
+            <span class="np-label">Processing story</span>
+            <h2>Macadamia and cashew processing<br><em>prepared for global buyers.</em></h2>
+            <p class="np-body">From orchard origin and product handling to quality oversight and export preparation, Nuts Paradise connects South African nut processing with the requirements of international food, retail and ingredient buyers.</p>
         </div>
     </section>
 

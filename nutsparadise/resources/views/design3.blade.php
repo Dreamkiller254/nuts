@@ -50,7 +50,7 @@
 
             <div class="cinema-footer np-container">
                 <span>MACADAMIA &amp; CASHEW PROCESSING</span>
-                <span>ORCHARD STUDY · ILLUSTRATIVE PHOTOGRAPHY</span>
+                <span>MACADAMIA ORCHARD ORIGIN · SOUTH AFRICAN PROCESSING</span>
             </div>
         </div>
 
@@ -98,7 +98,7 @@
 
         <section class="process np-section" id="processing">
             <div class="np-container process-grid">
-                <div class="process-image reveal"><img src="{{ asset('assets/photos/harvest-hands.jpg') }}" alt="Hands holding freshly gathered macadamia nuts" width="1400" height="933" loading="lazy"><span class="photo-caption">THE ORIGIN STORY · STOCK PHOTOGRAPHY</span></div>
+                <div class="process-image reveal"><img src="{{ asset('assets/photos/harvest-hands.jpg') }}" alt="Hands holding freshly gathered macadamia nuts" width="1400" height="933" loading="lazy"><span class="photo-caption">MACADAMIA ORIGIN · PREPARED FOR GLOBAL FOOD MARKETS</span></div>
                 <div class="process-copy reveal">
                     <span class="np-label">From origin to export</span>
                     <h2>Good things<br>deserve <em>great care.</em></h2>
@@ -124,7 +124,7 @@
                         <div><span>03</span><p><strong>Long-term thinking</strong> Build a relationship beyond a single order.</p></div>
                     </div>
                 </div>
-                <div class="logistics-image reveal"><img src="{{ asset('assets/photos/export.jpg') }}" alt="Crates prepared for export at a logistics facility" width="1600" height="1067" loading="lazy"><span class="photo-caption">GLOBAL LOGISTICS · ILLUSTRATIVE PHOTOGRAPHY</span></div>
+                <div class="logistics-image reveal"><img src="{{ asset('assets/photos/export.jpg') }}" alt="Crates prepared for export at a logistics facility" width="1600" height="1067" loading="lazy"><span class="photo-caption">EXPORT PREPARATION · MACADAMIA &amp; CASHEW SUPPLY</span></div>
             </div>
         </section>
 
@@ -143,7 +143,7 @@
                     <div><a class="np-brand" href="{{ route('home') }}"><img class="np-logo" src="{{ asset('logo.webp') }}" alt="Nuts Paradise" width="500" height="287"></a><p>South African macadamia &amp; cashew processing. From African origin to global market.</p></div>
                     <nav aria-label="Footer navigation"><a href="#about">Our story</a><a href="#products">Products</a><a href="#processing">Processing</a><a href="#logistics">Our reach</a><a href="#enquiry" data-enquiry>Let's talk ↗</a></nav>
                 </div>
-                <div class="np-footer-bottom"><span>Riverside Park · Mbombela · South Africa</span><a href="{{ route('photography') }}" wire:navigate>Illustrative stock photography · Credits ↗</a></div>
+                <div class="np-footer-bottom"><span>Riverside Park · Mbombela · South Africa</span><a href="{{ route('photography') }}" wire:navigate>Photography details ↗</a></div>
             </div>
         </footer>
 

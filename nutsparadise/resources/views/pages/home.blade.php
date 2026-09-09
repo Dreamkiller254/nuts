@@ -3,7 +3,7 @@
     description="Nuts Paradise processes and exports macadamia and cashew products from South Africa. FSSC 22000 certified processing in Mbombela with 1,000 MT monthly capacity."
     body-class="home-page"
     image="assets/photos/orchard-canopy.jpg"
-    image-alt="Illustrative aerial orchard photography representing African agricultural origin"
+    image-alt="Aerial orchard rows representing South African macadamia production"
     preload-image="assets/photos/orchard-canopy.jpg"
 >
     <section class="cinema home-cinema">
@@ -31,7 +31,7 @@
         </div>
         <div class="cinema-footer np-container">
             <span>MACADAMIA &amp; CASHEW PROCESSING</span>
-            <span>ORCHARD STUDY · ILLUSTRATIVE PHOTOGRAPHY</span>
+            <span>MACADAMIA ORCHARD ORIGIN · SOUTH AFRICAN PROCESSING</span>
         </div>
     </section>
 
@@ -79,7 +79,7 @@
 
     <section class="process np-section">
         <div class="np-container process-grid">
-            <div class="process-image reveal"><img src="{{ asset('assets/photos/harvest-hands.webp') }}" alt="Hands holding freshly gathered macadamia nuts" width="1400" height="933" loading="lazy" decoding="async"><span class="photo-caption">ORIGIN STUDY · ILLUSTRATIVE PHOTOGRAPHY</span></div>
+            <div class="process-image reveal"><img src="{{ asset('assets/photos/harvest-hands.webp') }}" alt="Hands holding freshly gathered macadamia nuts" width="1400" height="933" loading="lazy" decoding="async"><span class="photo-caption">MACADAMIA ORIGIN · PREPARED FOR GLOBAL FOOD MARKETS</span></div>
             <div class="process-copy reveal">
                 <span class="np-label">Processing in Mbombela</span>
                 <h2>Built around<br><em>buyer requirements.</em></h2>
