@@ -6,7 +6,7 @@
     <x-site.page-hero
         eyebrow="Contact Us"
         heading="Start With Your Requirements"
-        summary="Tell us the product, estimated volume, destination market and timing. The backend workflow will be connected later without changing this public route or form structure."
+        summary="Product interest, estimated volume, destination market and timing give us the right place to begin a professional buyer conversation."
         :cta-label="null"
     />
 
@@ -14,7 +14,7 @@
         <div class="contact-intro reveal">
             <span class="np-label">Buyer enquiry</span>
             <h2>Product. Volume.<br><em>Destination. Timing.</em></h2>
-            <p class="np-body">This Phase 2 form is intentionally front-end only. It validates the buyer journey and fields now, but it does not pretend to send an email or save an enquiry before the backend is connected.</p>
+            <p class="np-body">Use the enquiry form to prepare the details needed for a buyer conversation. Online submission is not enabled yet, so nothing entered here is sent or stored.</p>
 
             <div class="contact-location-list">
                 <div><span class="np-label">Processing facility</span><strong>Mbombela</strong><p>Riverside Park Industrial Zone, Rapid Street, Riverside Park, Mbombela, South Africa</p></div>
@@ -32,18 +32,18 @@
                 <label>Estimated volume<input name="estimated_volume" placeholder="e.g. 10 MT per month" required></label>
                 <label class="full">Destination market<input name="destination_market" required></label>
                 <label class="full">Message<textarea name="message" rows="5" placeholder="Specifications, timing or other requirements"></textarea></label>
-                <label class="full consent"><input type="checkbox" name="consent" required><span>I understand this preview form is not yet connected to a backend. Final consent wording will be replaced with client-approved privacy language before production submissions are enabled.</span></label>
+                <label class="full consent"><input type="checkbox" name="consent" required><span>I understand this form currently checks my enquiry details only and does not submit or store them. Production consent wording will be added when online submissions are enabled.</span></label>
             </div>
-            <button class="np-button lime" type="submit">Review Enquiry <span aria-hidden="true">↗</span></button>
-            <p class="form-preview-note">Front-end preview only · Nothing is sent or stored.</p>
+            <button class="np-button lime" type="submit">Check Enquiry Details <span aria-hidden="true">↗</span></button>
+            <p class="form-preview-note">Enquiry preview · Nothing is sent or stored.</p>
             <p class="form-status" role="status" aria-live="polite"></p>
         </form>
     </section>
 
     <section class="contact-boundary">
         <div class="np-container reveal">
-            <span class="np-label">Approved contact details</span>
-            <p>No public phone number, email address or map pin has been added because those details have not yet been approved for publication.</p>
+            <span class="np-label">Public contact details</span>
+            <p>Phone, email and map details will be published only after they are approved for public use.</p>
         </div>
     </section>
 </x-layouts.site>
