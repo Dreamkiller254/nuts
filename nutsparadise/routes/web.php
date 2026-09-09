@@ -19,18 +19,24 @@ Route::redirect('/quality', '/quality-certification', 301);
 
 Route::get('/sitemap.xml', function () {
     $baseUrl = rtrim((string) config('app.url'), '/');
-    $entries = collect(config('seo.pages'))
-        ->filter(fn (array $page): bool => (bool) ($page['indexable'] ?? false))
-        ->map(function (array $page, string $routeName) use ($baseUrl): array {
-            $path = route($routeName, [], false);
+    $pages = config('seo.pages', []);
+    $entries = [];
 
-            return [
+    if (is_array($pages)) {
+        foreach ($pages as $routeName => $page) {
+            if (! is_string($routeName) || ! is_array($page) || ! ($page['indexable'] ?? false)) {
+                continue;
+            }
+
+            $path = route($routeName, [], false);
+            $lastmod = $page['lastmod'] ?? null;
+
+            $entries[] = [
                 'loc' => $path === '/' ? $baseUrl.'/' : $baseUrl.'/'.ltrim($path, '/'),
-                'lastmod' => $page['lastmod'] ?? null,
+                'lastmod' => is_string($lastmod) ? $lastmod : null,
             ];
-        })
-        ->values()
-        ->all();
+        }
+    }
 
     return response()
         ->view('sitemap', ['entries' => $entries])
