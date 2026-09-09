@@ -4,6 +4,7 @@ on:
   push:
     branches:
       - main
+      - mockone
   pull_request:
 
 permissions:
