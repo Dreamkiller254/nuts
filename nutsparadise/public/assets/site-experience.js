@@ -2,9 +2,9 @@
     const consentKey = 'np_cookie_consent_v1';
     const consentMaxAge = 1000 * 60 * 60 * 24 * 180;
     let consent = null;
+    let bannerForcedOpen = false;
 
     const cookieSystem = () => document.querySelector('[data-cookie-system]');
-    const cookieDialog = () => document.querySelector('[data-cookie-dialog]');
     const whatsapp = () => document.querySelector('[data-whatsapp-chat]');
 
     const readConsent = () => {
@@ -14,6 +14,7 @@
 
             const parsed = JSON.parse(raw);
             const updatedAt = Number(parsed.updatedAt || 0);
+
             if (parsed.version !== 1 || typeof parsed.externalMedia !== 'boolean' || !updatedAt || Date.now() - updatedAt > consentMaxAge) {
                 window.localStorage.removeItem(consentKey);
                 return null;
@@ -25,32 +26,12 @@
         }
     };
 
-    const writeConsent = externalMedia => {
-        consent = {
-            version: 1,
-            necessary: true,
-            externalMedia: Boolean(externalMedia),
-            updatedAt: Date.now(),
-        };
-
-        try {
-            window.localStorage.setItem(consentKey, JSON.stringify(consent));
-        } catch (_) {
-            // If storage is unavailable, apply the choice for the current page only.
-        }
-
-        syncConsentUi();
-        syncExternalMedia();
-    };
-
     const syncExternalMedia = () => {
         const allowed = Boolean(consent?.externalMedia);
 
         document.querySelectorAll('[data-cookie-media="external"]').forEach(container => {
             const frame = container.querySelector('[data-cookie-frame]');
             const placeholder = container.querySelector('[data-cookie-placeholder]');
-
-            container.classList.toggle('is-enabled', allowed);
 
             if (allowed) {
                 if (frame?.dataset.cookieSrc && frame.getAttribute('src') !== frame.dataset.cookieSrc) {
@@ -70,37 +51,37 @@
     };
 
     const syncConsentUi = () => {
-        const root = cookieSystem();
-        if (!root) return;
+        const banner = cookieSystem()?.querySelector('[data-cookie-banner]');
+        if (!banner) return;
 
-        const banner = root.querySelector('[data-cookie-banner]');
-        const settingsButton = root.querySelector('[data-cookie-settings-fab]');
-        const checkbox = root.querySelector('[data-cookie-external-media]');
-        const hasChoice = Boolean(consent);
-
-        if (banner) banner.hidden = hasChoice;
-        if (settingsButton) settingsButton.hidden = !hasChoice;
-        if (checkbox) checkbox.checked = Boolean(consent?.externalMedia);
-        document.body?.classList.toggle('np-cookie-banner-visible', !hasChoice);
+        const showBanner = !consent || bannerForcedOpen;
+        banner.hidden = !showBanner;
+        document.body?.classList.toggle('np-cookie-banner-visible', showBanner);
     };
 
-    const openCookieDialog = () => {
-        const dialog = cookieDialog();
-        if (!dialog) return;
+    const writeConsent = externalMedia => {
+        consent = {
+            version: 1,
+            necessary: true,
+            externalMedia: Boolean(externalMedia),
+            updatedAt: Date.now(),
+        };
+        bannerForcedOpen = false;
 
-        const checkbox = dialog.querySelector('[data-cookie-external-media]');
-        if (checkbox) checkbox.checked = Boolean(consent?.externalMedia);
+        try {
+            window.localStorage.setItem(consentKey, JSON.stringify(consent));
+        } catch (_) {
+            // Keep the choice for the current page if browser storage is unavailable.
+        }
 
-        if (typeof dialog.showModal === 'function') dialog.showModal();
-        else dialog.setAttribute('open', '');
+        syncConsentUi();
+        syncExternalMedia();
     };
 
-    const closeCookieDialog = () => {
-        const dialog = cookieDialog();
-        if (!dialog) return;
-
-        if (typeof dialog.close === 'function' && dialog.open) dialog.close();
-        else dialog.removeAttribute('open');
+    const reopenConsent = () => {
+        bannerForcedOpen = true;
+        syncConsentUi();
+        window.requestAnimationFrame(() => cookieSystem()?.querySelector('[data-cookie-accept]')?.focus());
     };
 
     const setWhatsAppOpen = open => {
@@ -139,30 +120,16 @@
 
         if (target.closest('[data-cookie-accept]')) {
             writeConsent(true);
-            closeCookieDialog();
             return;
         }
 
         if (target.closest('[data-cookie-reject]')) {
             writeConsent(false);
-            closeCookieDialog();
-            return;
-        }
-
-        if (target.closest('[data-cookie-save]')) {
-            const checked = Boolean(cookieDialog()?.querySelector('[data-cookie-external-media]')?.checked);
-            writeConsent(checked);
-            closeCookieDialog();
             return;
         }
 
         if (target.closest('[data-cookie-settings]')) {
-            openCookieDialog();
-            return;
-        }
-
-        if (target.closest('[data-cookie-dialog-close]')) {
-            closeCookieDialog();
+            reopenConsent();
             return;
         }
 
@@ -188,14 +155,14 @@
             event.preventDefault();
             message?.classList.add('is-invalid');
             message?.setAttribute('aria-invalid', 'true');
-            if (status) status.textContent = 'Please type a message before opening WhatsApp.';
+            if (status) status.textContent = 'Please type a message first.';
             message?.focus();
             return;
         }
 
         message?.classList.remove('is-invalid');
         message?.removeAttribute('aria-invalid');
-        if (status) status.textContent = 'Opening WhatsApp with your message…';
+        if (status) status.textContent = 'Opening WhatsApp…';
     });
 
     document.addEventListener('input', event => {
@@ -208,8 +175,7 @@
     });
 
     document.addEventListener('keydown', event => {
-        if (event.key !== 'Escape') return;
-        setWhatsAppOpen(false);
+        if (event.key === 'Escape') setWhatsAppOpen(false);
     });
 
     document.addEventListener('livewire:navigated', initialisePageExperience);
